@@ -17,19 +17,19 @@ namespace GTTG.Integration {
         /// <summary>
         /// Time interval visible on tutorial startup.
         /// </summary>
-        public static DateTimeInterval ViewDateTimeInterval { get; } = new DateTimeInterval(Start, Start.AddHours(4));
+        public static DateTimeInterval ViewDateTimeInterval { get; } = new DateTimeInterval(Start.AddHours(1), Start.AddHours(3));
 
         /// <summary>
         /// Time interval displayable in the tutorial. User can select <see cref="ViewDateTimeInterval"/> from this interval by interaction with the application.
         /// </summary>
-        public static DateTimeInterval ContentDateTimeInterval { get; } = new DateTimeInterval(Start.AddHours(1), Start.AddHours(3));
+        public static DateTimeInterval ContentDateTimeInterval { get; } = new DateTimeInterval(Start, Start.AddHours(4));
         
         /// <summary>
         /// Collects <see cref="ViewDateTimeInterval"/> and <see cref="ContentDateTimeInterval"/> for library use.
         /// </summary>
         public static DateTimeContext DateTimeContext = new DateTimeContext(
-            new DateTimeInterval(Start, Start.AddHours(4)),
-            new DateTimeInterval(Start.AddHours(1), Start.AddHours(3))
+            ContentDateTimeInterval,
+            ViewDateTimeInterval
         );
     }
 }

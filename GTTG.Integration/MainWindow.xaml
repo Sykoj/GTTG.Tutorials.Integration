@@ -6,7 +6,7 @@
         xmlns:integration="clr-namespace:GTTG.Integration"
         mc:Ignorable="d"
         Title="GTTG integration demo" Height="450" Width="800">
-    
+
     <Grid>
         <integration:GraphicalComponentUserControl/>
     </Grid>
